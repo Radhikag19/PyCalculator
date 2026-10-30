@@ -33,3 +33,8 @@ def test_invalid_identifier_raises():
     ev = SafeEvaluator()
     with pytest.raises(ValueError):
         ev.evaluate("unknown_name")
+
+
+def test_abs():
+    ev = SafeEvaluator()
+    assert ev.evaluate("abs(-42)") == 42
