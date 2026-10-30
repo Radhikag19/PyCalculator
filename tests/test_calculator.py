@@ -33,3 +33,11 @@ def test_invalid_identifier_raises():
     ev = SafeEvaluator()
     with pytest.raises(ValueError):
         ev.evaluate("unknown_name")
+
+def test_scientific_math_extensions():
+    ev = SafeEvaluator()
+    assert ev.evaluate("factorial(5)") == 120
+    assert ev.evaluate("round(3.14159)") == 3
+    assert math.isclose(ev.evaluate("exp(2)"), math.exp(2), rel_tol=1e-9)
+    assert ev.evaluate("abs(-42)") == 42
+

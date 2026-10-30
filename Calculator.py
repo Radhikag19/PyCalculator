@@ -37,6 +37,10 @@ class SafeEvaluator:
             "tan": lambda x: math.tan(math.radians(x)),
             "sqrt": math.sqrt,
             "log": math.log,
+            "abs": abs,
+            "exp": math.exp,
+            "round": round,
+            "factorial": math.factorial,
         }
         self.consts = {
             "pi": math.pi,
