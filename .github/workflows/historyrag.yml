@@ -144,16 +144,16 @@ jobs:
 
             | Metric | Value |
             |---|---|
-            | **Impact Level** | \`${{analysis.impact_level}}\` |
-            | **Affected Components** | \`${{analysis.affected_components.join(', ')}}\` |
-            | **AI Confidence** | \`${{analysis.confidence * 100}%}\` |
-            | **Policy Gate Decision** | **${{gate.decision === 'APPROVED' ? '✅ APPROVED (Merge Safe)' : '❌ BLOCKED'}}** |
+            | **Impact Level** | \`${analysis.impact_level}\` |
+            | **Affected Components** | \`${analysis.affected_components.join(', ')}\` |
+            | **AI Confidence** | \`${analysis.confidence * 100}%\` |
+            | **Policy Gate Decision** | **${gate.decision === 'APPROVED' ? '✅ APPROVED (Merge Safe)' : '❌ BLOCKED'}** |
 
             ### 🧪 Recommended Regression Tests Executed:
-            ${{analysis.recommended_tests.map(t => `- \`${{t}}\` (Status: PASS)`).join('\n')}}
+            ${analysis.recommended_tests.map(t => `- \`${t}\` (Status: PASS)`).join('\n')}
 
             ### 🛡️ Policy Gate Validation:
-            ${{gate.reasons.map(r => `- ${{r}}`).join('\n')}}
+            ${gate.reasons.map(r => `- ${r}`).join('\n')}
 
             ---
             *Automated governance by History-Aware Repository Intelligence*`;
