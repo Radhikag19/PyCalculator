@@ -60,14 +60,14 @@ jobs:
           print('Detected changed files:', changed_files)
 
           impact_level = 'LOW'
-          affected_components = ['core']
+          affected_components = ['dcim', 'ipam', 'tenancy', 'users', 'utilities', 'circuits', 'virtualization', 'extras', 'wireless']
           recommended_tests = ['tests/']
 
           if any(f.endswith('.py') for f in changed_files):
               impact_level = 'MEDIUM'
 
           analysis = {
-              'repository': 'PyCalculator',
+              'repository': 'netbox',
               'impact_level': impact_level,
               'changed_files': changed_files,
               'affected_components': affected_components,
